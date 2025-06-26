@@ -16,28 +16,11 @@ on:
           - minor
           - major
 
-permissions:
-  contents: write
-
 jobs:
-
-  release:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Is secret available?
-        id: check_secret
-        run: |
-          if [[ -z "${{ secrets.RELEASE_WFLOW_SSH_KEY }}" ]]; then
-            echo "SSH key is not available. Skipping release workflow."
-            exit 1
-          else
-            echo "SSH key is available."
-          fi
-
   arduino-devops:
     uses: Infineon/arduino-devops/.github/workflows/release.yml@enable-bypass-rule
     with:
       version: ${{ inputs.version }}
     secrets:
-      RELEASE_WFLOW_SSH_KEY: ${{ secrets.RELEASE_WFLOW_SSH_KEY }}
+      release-ssh-key: ${{ secrets.RELEASE_WFLOW_SSH_KEY }}
 
