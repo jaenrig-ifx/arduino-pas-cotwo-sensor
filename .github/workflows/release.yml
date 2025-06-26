@@ -22,5 +22,5 @@ jobs:
     with:
       version: ${{ inputs.version }}
     secrets:
-      release-ssh-key: ${{ secrets.RELEASE_WFLOW_SSH_KEY }}
+      release-ssh-key: ${{ secrets.release_wflow_key }}
 
