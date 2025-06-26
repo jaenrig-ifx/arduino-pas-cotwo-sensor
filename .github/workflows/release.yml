@@ -18,7 +18,7 @@ on:
 
 jobs:
   arduino-devops:
-    uses: Infineon/arduino-devops/.github/workflows/release.yml@latest
+    uses: Infineon/arduino-devops/.github/workflows/release.yml@enable-bypass-rule
     with:
       version: ${{ inputs.version }}
     secrets: inherit
