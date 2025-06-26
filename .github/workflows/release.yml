@@ -25,3 +25,16 @@ jobs:
     with:
       version: ${{ inputs.version }}
     secrets: inherit
+
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Is secret available?
+      id: check_secret
+      run: |
+        if [[ -z "${{ secrets.RELEASE_WFLOW_SSH_KEY }}" ]]; then
+          echo "SSH key is not available. Skipping release workflow."
+          exit 1
+        else
+          echo "SSH key is available."
+        fi
