@@ -38,5 +38,6 @@ jobs:
     uses: Infineon/arduino-devops/.github/workflows/release.yml@enable-bypass-rule
     with:
       version: ${{ inputs.version }}
-    secrets: inherit
+    secrets:
+      RELEASE_WFLOW_SSH_KEY: ${{ secrets.RELEASE_WFLOW_SSH_KEY }}
 
