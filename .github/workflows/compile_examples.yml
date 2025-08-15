@@ -18,3 +18,5 @@ on:
 jobs:
   arduino-devops:
     uses: Infineon/arduino-devops/.github/workflows/compile-examples.yml@core-install-from-local
+    with:
+      called-ref: core-install-from-local
