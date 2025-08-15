@@ -13,7 +13,7 @@ on:
       - '*'
   schedule:
     - cron: '30 3 * * 5' # Run every Friday at 3:30 AM UTC
-    # adding useless change to trigger the workflow 12
+    # adding useless change to trigger the workflow 123
     
 jobs:
   arduino-devops:
